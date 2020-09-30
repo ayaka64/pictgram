@@ -1,3 +1,4 @@
+# ユーザー情報の登録
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -14,9 +15,8 @@ class UsersController < ApplicationController
     end
   end
   
-  privete
+  privete # クラス外部から呼び出せないようにする
   def user_params
     params.reqire(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
 end
