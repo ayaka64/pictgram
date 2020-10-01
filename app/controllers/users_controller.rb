@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     end
   end
   
-  privete # クラス外部から呼び出せないようにする
+  private # クラス外部から呼び出せないようにする
   def user_params
     params.reqire(:user).permit(:name, :email, :password, :password_confirmation)
   end
