@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   def create
     # binding.pry
     @user = User.new(user_params)
-    if @user.save # 保存すると
-      redirect_to root_path, success:'登録が完了しました' # 指定のrootのurlに転送する
+    if @user.save
+      redirect_to root_path, success: '登録が完了しました' # 指定のrootのurlに転送する
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
@@ -17,6 +17,6 @@ class UsersController < ApplicationController
   
   private # クラス外部から呼び出せないようにする
   def user_params
-    params.reqire(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
