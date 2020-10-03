@@ -2,12 +2,13 @@
 # ユーザーデータ条件を決定する
 
 class User < ApplicationRecord
-    # 名前を15文字まで許可を追加
+  # 名前を15文字まで許可を追加
   validates :name, presence: true, length: { maximum: 15 }
 
   # ~ @ ~ . ~の形を許可
   VALID_EMAIL_REGEX = /\A\S+@\S+\.\S+\z/
   # /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/
+  # /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   
@@ -16,8 +17,8 @@ class User < ApplicationRecord
   # /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
   
   # パスワードの文字数制限
-  validates :password, presence: true, length: { minimum: 8, maximum: 32 }, 
-  format: { with: VALID_PASSWRD_REGEX }
+  validates :password, presence: true, format: { with: VALID_PASSWRD_REGEX }
+  # minimum: 8, maximum: 32
   
   has_secure_password
   
