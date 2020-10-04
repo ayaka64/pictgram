@@ -6,7 +6,8 @@
         <%= form_for :session, url: login_path do |f| %>
         
           <div class="form-group">
-            <%= f.label :password, class: "text-white" %>
+            <%= f.label :email, class: "text-white" %>
+            <%= f.text_field :email, class: "form_control" %>
             
           </div>
           <div class="form-group">

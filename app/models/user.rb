@@ -13,11 +13,11 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   
   # アルファベット、数字の混合のみ可能
-  VALID_PASSWRD_REGEX =/\A(?=.*?[a-z])[a-z\d]{ 8, 32 }+\z/
+  VALID_PASSWRD_REGEX =/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/
   # /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
   
   # パスワードの文字数制限
-  validates :password, presence: true, format: { with: VALID_PASSWRD_REGEX }
+  validates :password, presence: true, length: { minimum: 8, maximum: 32 }, format: { with: VALID_PASSWRD_REGEX }
   # minimum: 8, maximum: 32
   
   has_secure_password
