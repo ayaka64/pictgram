@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.find_by(email: email_params)
+    user = User.find_by(email: email_params)  # ★課題
     # フォームに入力されたアドレスが一致するユーザーがいるか検索
-    if user && user.authenticate(password_params)
+    if user && user.authenticate(password_params)  # ★課題
       # userのパスワードが正しいか確認
       log_in user
       redirect_to root_path, success: 'ログインに成功しました'
@@ -33,11 +33,11 @@ class SessionsController < ApplicationController
     # ユーザー情報の削除
   end
   
-  def email_params
+  def email_params  # ★課題
     params.require(:session).permit(:email)
   end
   
-  def password_params
+  def password_params  # ★課題
     params.require(:session).permit(:password)
   end
 end
