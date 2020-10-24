@@ -1,5 +1,6 @@
 # ルーティングの設定
 Rails.application.routes.draw do
+  get 'topics/new'
   get 'sessions/new'
   get 'users/new'
   root 'pages#index'
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
   
   delete '/logout',   to: 'sessions#destroy'
   # ログアウト時にSessionを削除する
+  
+  resources :users
+  resources :topics
 end
