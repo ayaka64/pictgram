@@ -3,8 +3,10 @@ class SessionsController < ApplicationController
   end
   
   def create
+    
     user = User.find_by(email: email_params[:email])  # ★課題
     # フォームに入力されたアドレスが一致するユーザーがいるか検索
+   
     if user && user.authenticate(password_params[:password])  # ★課題
       # userのパスワードが正しいか確認
       log_in user
