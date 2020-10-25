@@ -1,11 +1,10 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topics.all
+    @topics = Topic.all
   end
   
   def new
     @topic = Topic.new
-    
   end
   
   def create
@@ -22,6 +21,6 @@ class TopicsController < ApplicationController
     
     private
     def topic_params
-      params.require(:topic).permit(:image,description)
+      params.require(:topic).permit(:image, :description)
     end
 end
