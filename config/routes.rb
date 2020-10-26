@@ -1,14 +1,10 @@
 # ルーティングの設定
 Rails.application.routes.draw do
-  get 'topics/new'
-  get 'sessions/new'
   
-  get 'users/new'
+  get 'sessions/new'
   
   root 'pages#index'
   get 'pages/help'
- 
-  resources :users
   
   get    '/login',   to: 'sessions#new' 
   # ログインするためのフォームを表示するページの取得

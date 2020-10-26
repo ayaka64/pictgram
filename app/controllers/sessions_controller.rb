@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   def new
   end
   
+  binding.pry
+  
   def create
     
     user = User.find_by(email: email_params[:email])  # ★課題
