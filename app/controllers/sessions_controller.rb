@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   
-  binding.pry
+  #binding.pry
   
   def create
     
