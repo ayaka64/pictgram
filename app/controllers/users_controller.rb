@@ -1,8 +1,10 @@
 # ユーザー情報の登録
+# view/users/new.html.erb　9行目に紐づく@userインスタンス変数を定義している
 class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  # モデルを新規
   
   def create
     # binding.pry

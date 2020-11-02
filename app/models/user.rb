@@ -1,5 +1,4 @@
-
-# ユーザーデータ条件を決定する
+# userモデルを扱う、userデータ条件を決定する
 
 class User < ApplicationRecord
   # 名前を15文字まで許可を追加

@@ -5,7 +5,8 @@
     <div class="row">
       <div class= "col-md-offset-4 col-md-4 users-new-container">
         <h1 class= "text-center text-white">Sign in</h1>
-        <%= form_for @user do |f| %>
+        
+        <%= form_for @user do |f| %>　<!--userの各カラム情報を入力、更新する-->
           <div class="form-group">
             <%= f.label :name, class: 'text-white' %>
             <%= f.text_field :name, class: 'form-control' %>
@@ -24,8 +25,10 @@
           </div>
 
           <%= f.submit "登録", class: 'btn-block btn-white' %>
-          <% end %>
-          <%= link_to 'ログインはこちら', login_path, class: 'text-white' %>
+          <!--f.submit：送信ボタンの生成-->
+        <% end %>
+          
+        <%= link_to 'ログインはこちら', login_path, class: 'text-white' %>
       </div>
     </div>
   </div>
