@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    binding.pry
+    #binding.pry
     
     @topics = Topic.all.includes(:favorite_users)
   end
