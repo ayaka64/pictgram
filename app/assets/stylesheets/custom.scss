@@ -137,22 +137,19 @@ h1, h2 {
       width: 100%;
     }
     
-    .topic-index-icon {
-      width: 35px;
-      height: 30px;
+    .like-btn {
+      width: 50px;
+      height: 50px;
+      color: #FF0000;
       margin-left: 20px;
     }
     
-    .like_btn {
-      width: 35px;
-      height: 30px;
-      color: #808080;
+    
+    .unlike-btn {
+      width: 50px;
+      height: 50px;
+      color: #000000;
       margin-left: 20px;
     }
-    
-    .unlike_btn {
-      width: 35px;
-      height: 30px;
-      color: #e54747;
-      margin-left: 20px;
+  }
 }
