@@ -1,0 +1,24 @@
+<!--コメント投稿ページ-->
+
+<div class="comment-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Add Comment</h1>
+        
+          <%= form_for @comment do |f| %>
+            
+            <div class="form-group">
+              <%= f.label :comment %>
+              <%= f.text_area :description, class: 'form-control'  %>
+            </div>
+            
+            <% if logged_in? %> 
+              <%= f.submit 'コメントする', class: 'btn btn-black btn-block' %>
+            <% end %>
+          
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>

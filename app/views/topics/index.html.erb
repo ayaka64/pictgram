@@ -15,13 +15,13 @@
           <% if !topic.favorite_users.include?(current_user) %>
           
             <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
-              <%= image_tag 'icons/heart-black.png', class: 'topic-like-icon' %>
+              <%= image_tag 'icons/heart-black.png', class: 'topic-unlike-icon' %>
               
             <% end %>
             
           <% else %>
             <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
-              <%= image_tag 'icons/heart-black.png', class: 'topic-unlike-icon' %>
+              <%= image_tag 'icons/heart-black.png', class: 'topic-like-icon' %>
               
             <% end %>
             
@@ -29,11 +29,18 @@
           
           <%= topic.favorite_users.count %>
           
-          <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+          <%= link_to new_comment_path(topic_id: topic.id) do %>
+            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+          <% end %>
           
           <p class="topic-text">
             <%= topic.description %>
           </p>
+          
+            <h4 class="topic-comment">コメント</h4>
+              <% topic.comments.each do |comment| %>
+            <p><%= comment.content %></p>
+              <% end %>
           
         </div>
       </div>
